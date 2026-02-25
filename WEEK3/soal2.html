@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Klik</title>
+</head>
+<body>
+    <button onclick="tambahCounter()">click me</button>
+    <p id="clickMessage">You have clicked the button 0 time(s) in this session.</p>
+    <p>Click the button to see the counter increase.</p>
+    <p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+    
+    
+
+    <script>
+        let counter = localStorage.getItem('clickCounter');
+        if (counter === null) {
+            counter = 0;
+        } else {
+            counter = parseInt(counter);
+        }
+        
+        let clickMessage = document.getElementById('clickMessage');
+        clickMessage.textContent = "You have clicked the button " + counter + " time(s) in this session.";
+        
+        function tambahCounter() {
+            counter++;
+            clickMessage.textContent = "You have clicked the button " + counter + " time(s) in this session.";
+            localStorage.setItem('clickCounter', counter);
+        }
+    </script>
+</body>
+</html>
