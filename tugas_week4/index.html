@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Preferensi Warna</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Preferensi Warna</h1>
+
+<fieldset>
+    <legend>Warna</legend>
+
+    <div class="row">
+        <span>1. Warna latarbelakang</span>
+        <div class="color-box" id="bgBox"></div>
+    </div>
+
+    <div class="row">
+        <span>2. Warna teks</span>
+        <div class="color-box" id="textBox"></div>
+    </div>
+</fieldset>
+
+<button id="btnSimpan">Simpan</button>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button id="cancelBtn">Cancel</button>
+            <h3>Choose a color</h3>
+            <button id="selectBtn">Select</button>
+        </div>
+        <div class="color-grid" id="colorGrid"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
