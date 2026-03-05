@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Garis Hidup Tanggal Lahir</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <h1 class="main-title"># Program Garis Hidup Tanggal Lahir</h1>
+        
+        <!-- Description -->
+        <div class="description">
+            <p>Program ini merupakan program untuk mendeskripsikan karakter anda berdasarkan tanggal lahir yang kemudian hasilnya akan dikategorikan sebagai Garis Lahir 1 sampai 9.</p>
+            <p>Angka-angka dalam tanggol lahir Anda menyimpan banyak makna. Jumlahkan sampai menjadi satu angka, lalu lihat antinya? (masihnya Anda lahir tanggal 25 desember 1998, 25 + 12 = 1998 = 2 + 5 + 1 + 2 = 1 + 9 + 8 + 8 + 36 = 3 + 6 = 9)</p>
+        </div>
+
+        <!-- Subtitle -->
+        <h2 class="subtitle">## Ayo Cari Tahu Kepribadian Kamu !</h2>
+
+        <!-- Form Input -->
+        <div class="form-container">
+            <div class="input-group">
+                <label for="dayInput">- <strong>Masukkan Tanggal Lahir Anda</strong></label>
+                <div class="input-wrapper">
+                    <input type="number" id="dayInput" min="1" max="31" value="1" class="input-field">
+                    <span class="dropdown-icon">▼</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="monthSelect">- <strong>Masukkan Bulan Lahir Anda</strong></label>
+                <div class="input-wrapper">
+                    <select id="monthSelect" class="input-field">
+                        <option value="1">Januari</option>
+                        <option value="2">Februari</option>
+                        <option value="3">Maret</option>
+                        <option value="4">April</option>
+                        <option value="5">Mei</option>
+                        <option value="6">Juni</option>
+                        <option value="7">Juli</option>
+                        <option value="8">Agustus</option>
+                        <option value="9">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                    <span class="dropdown-icon">▼</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="yearInput">- <strong>Masukkan Tahun Lahir Anda</strong></label>
+                <div class="input-wrapper">
+                    <input type="number" id="yearInput" min="1900" max="2100" value="2008" class="input-field">
+                    <span class="dropdown-icon">▼</span>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-kirim" id="kirimBtn"><strong>kirim</strong></button>
+                <button class="btn-reset" id="resetBtn"><strong>reset</strong></button>
+            </div>
+        </div>
+
+        <!-- Output Section -->
+        <div class="output-section">
+            <h3 class="output-title">--- Output</h3>
+            
+            <div class="output-details">
+                <div class="output-item">
+                    <span class="output-label">Tanggal:</span>
+                    <span class="output-value" id="outDay">1</span>
+                </div>
+                <div class="output-item">
+                    <span class="output-label">Bulan:</span>
+                    <span class="output-value" id="outMonth">1</span>
+                </div>
+                <div class="output-item">
+                    <span class="output-label">Tahun:</span>
+                    <span class="output-value" id="outYear">2008</span>
+                </div>
+                <div class="output-item">
+                    <span class="output-label">Kelas:</span>
+                    <span class="output-value" id="outHasil1">2010</span>
+                </div>
+                <div class="output-item">
+                    <span class="output-label">Kelas:</span>
+                    <span class="output-value" id="outHasil2">12</span>
+                </div>
+                <div class="output-item">
+                    <span class="output-label">Kelas:</span>
+                    <span class="output-value" id="outHasil3">3</span>
+                </div>
+            </div>
+
+            <!-- Result Card -->
+            <div class="result-card" id="lifeDescription">
+                <h4 class="result-title" id="lineTitle"># Tanggal Lahir Anda Berada Pada Garis Hidup 3</h4>
+                <div class="result-text" id="lineText">
+                    Bagi mereka yang jumlah angka hari lahirnya 3, ekspresi sosialisasi, dan kreativitas sebagai pelajaran yang harus ditempuh dalam hidupnya. Entertainer kelas dunia, orang-orang yang berklau dan optimistik termasuk di dalamnya. Orang-orang dengan garis hidup yang telah mengasah bakatnya mempunyai bakat kreatif yang intensif, biasanya dalam verbal, tulisan, aktiviti, atau seni. Mereka juga memiliki kemampuan dalam hidup dalam kesaksian dalam berkesempatan. Satu cara yang paling penting adalah membangun diri sendiri, kendalanya dan keinginan. Mereka dapat membantu orang lain. Mereka dapat membantu orang lain dalam kehidupan sehari-hari, seperti membantu memenuhi kebutuhan fisik, sosial, dan terkait.
+                    <br><br>
+                    Pembicara yang tampil dalam arti bukan hanya seseorang yang menyampaikan untuk didengar, tapi lebih penting lagi, seseorang yang mampu untuk mendengarkan. Mereka adalah individu-widya yang selalu diterima dengan baik dalam setiap situasi sosial, dan juga mereka sering kali memberikan nilai serta manfaat. Mereka tidak hanya menjadikan tempat selaku ada, tetapi juga menjadi sumber daya bagi orang lain. Mereka tidak hanya memberi pengembangan potensi, tetapi juga memberikan manfaat kepada orang lain. Mereka tidak hanya memberikan manfaat, tetapi juga memberikan nilai tambah. Mereka tidak hanya memberikan manfaat, tetapi juga memberikan nilai tambah. Mereka tidak hanya memberikan manfaat kepada orang lain, tetapi juga memberikan nilai tambah. Mereka tidak hanya memberikan manfaat kepada orang lain, tetapi juga mereka memberikan nilai tambah. Mereka tidak hanya memberikan manfaat kepada orang lain, tetapi juga mereka memberikan nilai Tambah. Mereka tidak hanya memberikan manfaat kepada orang lain, tetapi juga mereka memberikan nilai Tambah.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
