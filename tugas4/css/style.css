@@ -182,3 +182,7 @@ select.input-field {
         text-align: left;
     }
     
+    .input-table td:nth-child(2) {
+        display: none;
+    }
+}
