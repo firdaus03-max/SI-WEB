@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "d:\\SEMESTER 6\\SI WEB ISB 310\\SI-WEB\\tugas_week5\\index.html"
+            "file": "d:\\SEMESTER 6\\SI WEB ISB 310\\SI-WEB\\tugas4\\index.html"
         }
     ]
 }
