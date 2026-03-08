@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Garis Hidup Tanggal Lahir</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header dengan Gambar Atas -->
+        <div class="header">
+            <div class="header-image">
+                <div class="header-placeholder">
+                    <img src="images/header-corak.png" alt="Header Ornamen Oranye" class="header-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-fallback" style="display: none;">
+                        <div class="placeholder-content">
+                            <span class="placeholder-icon">🟠</span>
+                            <span class="placeholder-text">header-corak.png</span>
+                            <span class="placeholder-subtext">(placeholder oranye tua)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 id="mainTitle">Tampilan awal sistem</h1>
+        </div>
+
+        <!-- Navigasi Menu - Posisi persis seperti PDF -->
+        <div class="nav-menu">
+            <button class="nav-btn" onclick="showHome()">Home</button>
+            <button class="nav-btn" onclick="showMenu()">Menu</button>
+            <button class="nav-btn" onclick="showCalculator()">Calculator</button>
+            <button class="nav-btn" onclick="shoutAlert()">Shout</button>
+        </div>
+
+        <!-- Section Home -->
+        <div id="homeSection" class="section">
+            <!-- Tampilan awal sistem -->
+            <div class="description">
+                <p>Program ini merupakan program untuk mendeskripsikan karakter anda berdasarkan tanggal lahir yang kemudian hasilnya akan dikategorikan sebagai Garis Lahir 1 sampai 9.</p>
+                <p>Angka-angka dalam tanggal lahir Anda menyimpan banyak makna, jumlahkan sampai menjadi satu angka, lalu lihat artinya? (misalnya Anda lahir tanggal 25 desember 1998, 25 + 12 + 1998 = 2 + 5 + 1 + 2 + 1 + 9 + 8 + 8 = 36 = 3 + 6 = 9)</p>
+            </div>
+
+            <h3 class="subtitle">--- Ayo Cari Tahu Kepribadian Kamu ! ---</h3>
+
+            <!-- Form Input -->
+            <div class="form-container">
+                <table class="input-table">
+                    <tr>
+                        <td>Masukkan Tanggal Lahir Anda</td>
+                        <td>:</td>
+                        <td><input type="number" id="dayInput" min="1" max="31" value="25" class="input-field"></td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan Bulan Lahir Anda</td>
+                        <td>:</td>
+                        <td>
+                            <select id="monthSelect" class="input-field">
+                                <option value="1">Januari</option>
+                                <option value="2">Februari</option>
+                                <option value="3">Maret</option>
+                                <option value="4">April</option>
+                                <option value="5">Mei</option>
+                                <option value="6">Juni</option>
+                                <option value="7">Juli</option>
+                                <option value="8">Agustus</option>
+                                <option value="9">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Masukkan Tahun Lahir Anda</td>
+                        <td>:</td>
+                        <td><input type="number" id="yearInput" min="1900" max="2100" value="2008" class="input-field"></td>
+                    </tr>
+                </table>
+
+                <div class="button-container">
+                    <button class="btn-kirim" id="kirimBtn">KIRIM</button>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section">
+                <h4>Output</h4>
+                
+                <div class="output-details">
+                    <div>Tanggal: <span id="outDay">25</span></div>
+                    <div>Bulan: <span id="outMonth">12</span> (<span id="outMonthName">Desember</span>)</div>
+                    <div>Tahun: <span id="outYear">2008</span></div>
+                    <div>Hasil 1: <span id="outHasil1">38</span></div>
+                    <div>Hasil 2: <span id="outHasil2">3+8=11</span></div>
+                    <div>Hasil 3: <span id="outHasil3">1+1=2</span></div>
+                </div>
+
+                <div class="result-card" id="lifeDescription">
+                    <h2 id="lineTitle">Tanggal Lahir Anda Berada Pada Garis Hidup 2</h2>
+                    <div class="result-text" id="lineText"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Menu Makanan -->
+        <div id="menuSection" class="section hidden">
+            <div class="menu-container">
+                <div class="menu-title">MENU</div>
+                
+                <!-- Menu items akan muncul setelah klik OK pada alert -->
+                <div id="menuItems" class="hidden">
+                    <div class="menu-item">
+                        <div>
+                            <span class="item-name">Nasi Goreng</span><br>
+                            <span class="item-price">Rp 25.000</span>
+                        </div>
+                        <div class="item-control">
+                            <button onclick="updateQty('nasgor', -1)">-</button>
+                            <input type="text" id="qtyNasgor" value="0" readonly>
+                            <button onclick="updateQty('nasgor', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div>
+                            <span class="item-name">Mie Goreng</span><br>
+                            <span class="item-price">Rp 20.000</span>
+                        </div>
+                        <div class="item-control">
+                            <button onclick="updateQty('mie', -1)">-</button>
+                            <input type="text" id="qtyMie" value="0" readonly>
+                            <button onclick="updateQty('mie', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div>
+                            <span class="item-name">Ayam Bakar</span><br>
+                            <span class="item-price">Rp 30.000</span>
+                        </div>
+                        <div class="item-control">
+                            <button onclick="updateQty('ayam', -1)">-</button>
+                            <input type="text" id="qtyAyam" value="0" readonly>
+                            <button onclick="updateQty('ayam', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div>
+                            <span class="item-name">Es Teh</span><br>
+                            <span class="item-price">Rp 5.000</span>
+                        </div>
+                        <div class="item-control">
+                            <button onclick="updateQty('esteh', -1)">-</button>
+                            <input type="text" id="qtyEsteh" value="0" readonly>
+                            <button onclick="updateQty('esteh', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div>
+                            <span class="item-name">Es Jeruk</span><br>
+                            <span class="item-price">Rp 7.000</span>
+                        </div>
+                        <div class="item-control">
+                            <button onclick="updateQty('esjeruk', -1)">-</button>
+                            <input type="text" id="qtyEsjeruk" value="0" readonly>
+                            <button onclick="updateQty('esjeruk', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Total -->
+                    <div class="menu-total">
+                        <div class="total-row">
+                            <span>Total Belanja:</span>
+                            <span id="subtotal">Rp 0</span>
+                        </div>
+                        <div class="total-row discount-text" id="discountRow">
+                            <span>Diskon 10% (Pembelian > Rp 50.000):</span>
+                            <span id="discount">Rp 0</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total Bayar:</span>
+                            <span id="totalBayar">Rp 0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-reset">
+                        <span class="reset-text" onclick="resetMenu()">reset</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Calculator -->
+        <div id="calculatorSection" class="section hidden">
+            <div class="calculator">
+                <div class="calc-title">Calculator</div>
+                
+                <div class="calc-inputs">
+                    <input type="number" id="calcInput1" placeholder="Angka pertama">
+                    <input type="number" id="calcInput2" placeholder="Angka kedua">
+                </div>
+                
+                <div class="calc-buttons">
+                    <button class="calc-btn" onclick="calculate('+')">+</button>
+                    <button class="calc-btn" onclick="calculate('-')">-</button>
+                    <button class="calc-btn" onclick="calculate('*')">*</button>
+                    <button class="calc-btn" onclick="calculate('/')">/</button>
+                    <button class="calc-btn" onclick="calculate('//')">//</button>
+                    <button class="calc-btn" onclick="calculate('++')">++</button>
+                    <button class="calc-btn" onclick="calculate('-3%')">-3%</button>
+                    <button class="calc-btn" onclick="calculate('^')">^</button>
+                </div>
+                
+                <div class="calc-result" id="calcResult">0</div>
+                
+                <!-- Alert untuk input kosong -->
+                <div id="calcWarning" class="calc-warning hidden">⚠️ Inputan tidak boleh kosong!</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
